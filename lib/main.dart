@@ -18,7 +18,6 @@ class MyApp extends StatelessWidget {
 }
 
 class MyFirstWidget extends StatelessWidget {
-  const MyFirstWidget() : super();
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +33,6 @@ class MyFirstWidget extends StatelessWidget {
 }
 
 class MyFirstStateFullWidget extends StatefulWidget {
-  MyFirstStateFullWidget() : super();
 
   _MyFirstStateFullWidgetState createState() => _MyFirstStateFullWidgetState();
 }
