@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Changed title',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -18,6 +18,10 @@ class MyApp extends StatelessWidget {
 }
 
 class MyFirstWidget extends StatelessWidget {
+
+  // void getContext(){
+  //   print(context.runtimeType);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +44,10 @@ class MyFirstStateFullWidget extends StatefulWidget {
 class _MyFirstStateFullWidgetState extends State<MyFirstStateFullWidget> {
   int buildCounter = 0;
 
+  void getContext() {
+    print('${context.runtimeType}');
+  }
+
   void updateCounter(){
     setState(() {
       buildCounter +=1;
@@ -50,6 +58,7 @@ class _MyFirstStateFullWidgetState extends State<MyFirstStateFullWidget> {
   Widget build(BuildContext context) {
     updateCounter();
     print(buildCounter);
+    getContext();
     return Container(
       child: Center(
         child: Text('Hello $buildCounter'),
