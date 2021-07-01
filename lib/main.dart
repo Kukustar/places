@@ -12,12 +12,13 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyFirstStateFullWidget(),
+      home: MyFirstWidget(),
     );
   }
 }
 
 class MyFirstWidget extends StatelessWidget {
+  MyFirstWidget({Key? key}) : super(key: key);
 
   // void getContext(){
   //   print(context.runtimeType);
@@ -37,6 +38,7 @@ class MyFirstWidget extends StatelessWidget {
 }
 
 class MyFirstStateFullWidget extends StatefulWidget {
+  MyFirstStateFullWidget({Key? key}) : super(key: key);
 
   _MyFirstStateFullWidgetState createState() => _MyFirstStateFullWidgetState();
 }
