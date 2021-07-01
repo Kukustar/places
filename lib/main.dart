@@ -12,40 +12,49 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyFirstWidget(),
+      home: MyFirstStateFullWidget(),
     );
   }
 }
 
 class MyFirstWidget extends StatelessWidget {
-
-  int buildCounter = 0;
+  const MyFirstWidget() : super();
 
   @override
   Widget build(BuildContext context) {
+    int buildCounter = 0;
     buildCounter += 1;
     print(buildCounter);
     return Container(
       child: Center(
-        child: Text('Hello'),
+        child: Text('Hello $buildCounter'),
       ),
     );
   }
 }
 
 class MyFirstStateFullWidget extends StatefulWidget {
+  MyFirstStateFullWidget() : super();
+
   _MyFirstStateFullWidgetState createState() => _MyFirstStateFullWidgetState();
 }
 
 class _MyFirstStateFullWidgetState extends State<MyFirstStateFullWidget> {
   int buildCounter = 0;
+
+  void updateCounter(){
+    setState(() {
+      buildCounter +=1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    buildCounter += 1;
+    updateCounter();
     print(buildCounter);
     return Container(
       child: Center(
-        child: Text('Hello'),
+        child: Text('Hello $buildCounter'),
       ),
     );
   }
