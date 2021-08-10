@@ -12,7 +12,9 @@ class App extends StatelessWidget {
       title: 'Changed title',
       theme: ThemeData(
         backgroundColor: Colors.white,
-        canvasColor: Colors.white
+        canvasColor: Colors.white,
+        fontFamily: 'Roboto'
+        // fontFamily:
       ),
       home: SightListScreen(),
     );
