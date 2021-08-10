@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:places/ui/screen/sight_card.dart';
+import 'package:places/mocks.dart';
 
 /// SightListScreen
 class SightListScreen extends StatefulWidget {
@@ -46,8 +48,29 @@ class _SightListScreenState extends State<SightListScreen> {
                           text: 'нтересных мест',
                           style: TextStyle(color: Colors.black)
                       )
-                    ])),
-            )),
+                    ]
+                )
+              ),
+            )
+        ),
+        body: Center(
+          // TODO move this to ListView after lesson with Lists
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Padding(
+                    padding: EdgeInsets.only(top: 10.0),
+                    child: SightCard(mocks[0])
+                ),
+                Padding(
+                    padding: EdgeInsets.only(top: 10.0),
+                    child: SightCard(mocks[1])
+                ),
+
+              ],
+            ),
+          ),
+        ),
        );
   }
 }
