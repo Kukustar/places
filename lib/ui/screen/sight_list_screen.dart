@@ -53,20 +53,13 @@ class _SightListScreenState extends State<SightListScreen> {
               ),
             )
         ),
-        body: Center(
+        body: Container(
           // TODO move this to ListView after lesson with Lists
           child: SingleChildScrollView(
             child: Column(
               children: [
-                Padding(
-                    padding: EdgeInsets.only(top: 10.0),
-                    child: SightCard(mocks[0])
-                ),
-                Padding(
-                    padding: EdgeInsets.only(top: 10.0),
-                    child: SightCard(mocks[1])
-                ),
-
+                SightCard(mocks[0]),
+                SightCard(mocks[1])
               ],
             ),
           ),
