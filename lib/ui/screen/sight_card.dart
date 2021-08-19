@@ -8,95 +8,101 @@ class SightCard extends StatelessWidget {
   final Sight sight;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(context) {
     return InkWell(
       onTap: () => Navigator.push(
           context,
           MaterialPageRoute(builder: (context) => SightDetailsScreen(sight))
       ),
-      child: Stack(
-        children: [
-          Container(
-            height: 188,
-            width: 328,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                image: DecorationImage(
-                    image: NetworkImage(sight.url.toString()),
-                    fit: BoxFit.cover)
-            ),
-          ),
-          Positioned(
-            bottom: 0,
-            child: Container(
-              height: 88,
-              width: 328,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(10),
-                      bottomLeft: Radius.circular(10)),
-                  color: Colors.grey.shade100
-              ),
-              child: Padding(
-                padding: EdgeInsets.only(
-                    left: 16.0,
-                    top: 16.0
-                ),
-                child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+      child: Container(
+        margin: EdgeInsets.symmetric(horizontal: 18, vertical: 9),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(12),
+          child: Container(
+            color: Colors.grey.shade100,
+            child: AspectRatio(
+              aspectRatio: 3/2,
+              child: Column(
+                children: [
+                  Stack(
                     children: [
-                      Text(
-                        sight.name,
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500
-                        ),
-                      ),
-                      RichText(
-                        maxLines: 3,
-                        text: TextSpan(
-                          text: sight.details.toString(),
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal,
-                            color: Colors.grey
-                          )
-                        ),
-                      )
-                    ],
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-              top: 0,
-              child: Container(
-                width: 328,
-                child: Padding(
-                  padding: EdgeInsets.only(left: 16.0, top: 16.0, right: 16.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        sight.type.toString(),
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 14,
-                        )
-                      ),
                       Container(
-                        color: Colors.grey.shade100,
-                        width: 20,
-                        height: 18,
-                      )
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: NetworkImage(sight.url.toString()),
+                                fit: BoxFit.cover
+                            )
+                        ),
+                        width: double.infinity,
+                        height: 96,
+                      ),
+                      Positioned(
+                        top: 16,
+                        left: 16,
+                        right: 16,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              sight.type.toString(),
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14,
+                                )
+                                // style: textStyleSmall14BoldWhite,
+                            ),
+                            Icon(
+                              Icons.favorite_border,
+                              color: Colors.white,
+                              size: 24,
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
-                ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          sight.name,
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w500
+                            ),
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 2,
+                        ),
+                        SizedBox(
+                          height: 2,
+                        ),
+                        RichText(
+                            maxLines: 5,
+                            overflow: TextOverflow.ellipsis,
+                            text: TextSpan(
+                              text: sight.details.toString(),
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
+                                color: Colors.grey,
+
+                              ),
+                            ),
+                        ),
+                      ],
+                    ),
+                  )
+                ],
               ),
-          )
-        ],
+            ),
+          ),
+        ),
       ),
     );
   }
