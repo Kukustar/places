@@ -30,7 +30,4 @@ flutter:
 
 
   assets:
-    - assets/icons/heart.png
-    - assets/icons/Vector.png
-    - assets/icons/Union.png
-    - assets/icons/Calendar.png
+    - assets/icons/
