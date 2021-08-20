@@ -28,3 +28,6 @@ flutter:
         - asset: fonts/Roboto-Bold.ttf
           weight: 700
 
+
+  assets:
+    - assets/icons/

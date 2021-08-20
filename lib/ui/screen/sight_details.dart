@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
+import 'package:places/ui/widgets/imageLoader.dart';
 
 class SightDetailsScreen extends StatefulWidget {
   SightDetailsScreen(this.sight, {Key? key}) : super(key: key);
@@ -27,20 +28,21 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                 Container(
                   height: 361,
                   width: double.infinity,
-                  decoration: BoxDecoration(
-                      image: DecorationImage(
-                          image: NetworkImage(widget.sight.url.toString()),
-                          fit: BoxFit.cover)),
+                  child: ImageLoader(widget.sight.url.toString()),
                 ),
                 Positioned(
                   top: 36,
                   left: 16,
                   child: InkWell(
                     onTap: () => Navigator.pop(context),
-                    child: Container(
-                      width: 32,
-                      height: 32,
-                      color: Colors.white,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Container(
+                        width: 32,
+                        height: 32,
+                        color: Colors.white,
+                        child: Image.asset('assets/icons/Vector.png'),
+                      ),
                     ),
                   ),
                 )
@@ -109,6 +111,20 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                             borderRadius: BorderRadius.circular(10),
                             color: Colors.green,
                           ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset('assets/icons/Union.png'),
+                              SizedBox(width: 16,),
+                              Text(
+                                'ПОСТРОИТЬ МАРШРУТ',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white
+                                ),
+                            )],
+                          ),
                         ),
                     ),
                     Padding(
@@ -129,7 +145,10 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                 Container(
                                   width: 22,
                                   height: 19,
-                                  color: customGreyColor,
+                                  child: Image.asset(
+                                    'assets/icons/Calendar.png',
+                                    color: customGreyColor,
+                                  ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(left: 9),
@@ -152,7 +171,10 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                 Container(
                                   width: 22,
                                   height: 19,
-                                  color: customGreyColor,
+                                  child: Image.asset(
+                                      'assets/icons/heart.png',
+                                      color: Colors.black,
+                                  ),
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(left: 9),
