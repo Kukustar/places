@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
-import 'package:places/ui/widgets/imageLoader.dart';
+import 'package:places/ui/widgets/image_loader.dart';
 
 class SightDetailsScreen extends StatefulWidget {
-  SightDetailsScreen(this.sight, {Key? key}) : super(key: key);
+  const SightDetailsScreen(this.sight, {Key? key}) : super(key: key);
   final Sight sight;
 
   @override
@@ -14,18 +14,18 @@ class SightDetailsScreen extends StatefulWidget {
 
 class _SightDetailsScreenState extends State<SightDetailsScreen> {
 
-  final topPadding24 = EdgeInsets.only(top: 24.0);
-  final Color customGreyColor = Color.fromRGBO(124, 126, 146, 0.56);
+  final EdgeInsets topPadding24 = const EdgeInsets.only(top: 24.0);
+  final Color customGreyColor = const Color.fromRGBO(124, 126, 146, 0.56);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          children: [
+          children: <Widget>[
             Stack(
-              children: [
-                Container(
+              children: <Widget>[
+                SizedBox(
                   height: 361,
                   width: double.infinity,
                   child: ImageLoader(widget.sight.url.toString()),
@@ -48,16 +48,16 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                 )
               ],
             ),
-            Container(
+            SizedBox(
               width: double.infinity,
               child: Padding(
                 padding: const EdgeInsets.only(top: 24.0, left: 16.0, right: 16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+                  children: <Widget>[
                     Text(
                       widget.sight.name,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
                       ),
@@ -65,10 +65,10 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                     Padding(
                       padding: const EdgeInsets.only(top: 2.0),
                       child: Row(
-                        children: [
+                        children: <Widget>[
                           Text(
                             widget.sight.type.toString(),
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 14,
                               fontWeight: FontWeight.bold
                             ),
@@ -94,7 +94,7 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                         child: RichText(
                           text: TextSpan(
                             text: widget.sight.details.toString(),
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontWeight: FontWeight.normal,
                               fontSize: 14,
                               color: Colors.black
@@ -113,10 +113,10 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
+                            children: <Widget>[
                               Image.asset('assets/icons/Union.png'),
-                              SizedBox(width: 16,),
-                              Text(
+                              const SizedBox(width: 16,),
+                              const Text(
                                 'ПОСТРОИТЬ МАРШРУТ',
                                 style: TextStyle(
                                   fontSize: 14,
@@ -131,65 +131,61 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                       padding: topPadding24,
                       child: const Divider(
                         height: 0.8,
-                        color: const Color.fromRGBO(124, 126, 146, 0.56),
+                        color: Color.fromRGBO(124, 126, 146, 0.56),
                       ),
                     ),
                     Padding(
-                      padding: EdgeInsets.only(top:24, bottom: 24),
+                      padding: const EdgeInsets.symmetric(vertical: 24),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: [
-                          Container(
-                            child: Row(
-                              children: [
-                                Container(
-                                  width: 22,
-                                  height: 19,
-                                  child: Image.asset(
-                                    'assets/icons/Calendar.png',
-                                    color: customGreyColor,
-                                  ),
+                        children: <Widget>[
+                          Row(
+                            children: <Widget>[
+                              SizedBox(
+                                width: 22,
+                                height: 19,
+                                child: Image.asset(
+                                  'assets/icons/Calendar.png',
+                                  color: customGreyColor,
                                 ),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 9),
-                                    child: RichText(
-                                      text: TextSpan(
-                                        text: 'Запланировать',
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 9),
+                                  child: RichText(
+                                    text: TextSpan(
+                                      text: 'Запланировать',
+                                      style: TextStyle(
+                                          color: customGreyColor,
+                                          fontWeight: FontWeight.normal
+                                      )
+                                    ),
+                                  )
+                              )
+                            ],
+                          ),
+                          Row(
+                            children: <Widget>[
+                              SizedBox(
+                                width: 22,
+                                height: 19,
+                                child: Image.asset(
+                                    'assets/icons/heart.png',
+                                    color: Colors.black,
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 9),
+                                  child: RichText(
+                                    text: const TextSpan(
+                                        text: 'В избранное',
                                         style: TextStyle(
-                                            color: customGreyColor,
+                                            color: Colors.black,
                                             fontWeight: FontWeight.normal
                                         )
-                                      ),
-                                    )
-                                )
-                              ],
-                            )
-                          ),
-                          Container(
-                            child: Row(
-                              children: [
-                                Container(
-                                  width: 22,
-                                  height: 19,
-                                  child: Image.asset(
-                                      'assets/icons/heart.png',
-                                      color: Colors.black,
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 9),
-                                    child: RichText(
-                                      text: TextSpan(
-                                          text: 'В избранное',
-                                          style: TextStyle(
-                                              color: Colors.black,
-                                              fontWeight: FontWeight.normal
-                                          )
-                                      ),
-                                    )
-                                )
-                              ],
-                            )
+                                    ),
+                                  )
+                              )
+                            ],
                           )
                         ],
                       ),

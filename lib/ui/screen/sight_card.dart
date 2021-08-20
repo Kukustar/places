@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:places/domain/sight.dart';
 import 'package:places/ui/screen/sight_details.dart';
-import 'package:places/ui/widgets/imageLoader.dart';
-
+import 'package:places/ui/widgets/image_loader.dart';
 
 class SightCard extends StatelessWidget {
-  SightCard(this.sight, {Key? key}) : super(key: key);
+  const SightCard(this.sight, {Key? key}) : super(key: key);
   final Sight sight;
 
   @override
-  Widget build(context) {
+  Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 18, vertical: 9),
+      margin: const EdgeInsets.symmetric(horizontal: 18, vertical: 9),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(12),
         child: InkWell(
-          onTap: () => Navigator.push(
+          onTap: () => Navigator.push<dynamic>(
               context,
-              MaterialPageRoute(builder: (context) => SightDetailsScreen(sight))
-          ),
+              MaterialPageRoute<dynamic>(
+                  builder: (BuildContext context) =>
+                      SightDetailsScreen(sight))),
           child: Container(
             color: Colors.grey.shade100,
             child: Column(
-              children: [
+              children: <Widget>[
                 Stack(
-                  children: [
-                    Container(
+                  children: <Widget>[
+                    SizedBox(
                       child: ImageLoader(sight.url.toString()),
                       width: double.infinity,
                       height: 96,
@@ -36,16 +36,15 @@ class SightCard extends StatelessWidget {
                       right: 16,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            sight.type.toString(),
-                              style: TextStyle(
+                        children: <Widget>[
+                          Text(sight.type.toString(),
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 14,
                               )
                               // style: textStyleSmall14BoldWhite,
-                          ),
+                              ),
                           Image.asset('assets/icons/heart.png')
                           // Icon(
                           //   Icons.favorite_border,
@@ -57,40 +56,37 @@ class SightCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Container(
+                  child: SizedBox(
                     height: 96,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: <Widget>[
                         Text(
                           sight.name,
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500
-                            ),
+                          style: const TextStyle(
+                              fontSize: 16, fontWeight: FontWeight.w500),
                           overflow: TextOverflow.ellipsis,
                           maxLines: 2,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 2,
                         ),
                         RichText(
-                            maxLines: 3,
-                            overflow: TextOverflow.ellipsis,
-                            text: TextSpan(
-                              text: sight.details.toString(),
-                              style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.normal,
-                                color: Colors.grey,
-
-                              ),
+                          maxLines: 3,
+                          overflow: TextOverflow.ellipsis,
+                          text: TextSpan(
+                            text: sight.details.toString(),
+                            style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                              color: Colors.grey,
                             ),
+                          ),
                         ),
                       ],
                     ),

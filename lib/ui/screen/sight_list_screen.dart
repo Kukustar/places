@@ -4,7 +4,7 @@ import 'package:places/mocks.dart';
 
 /// SightListScreen
 class SightListScreen extends StatefulWidget {
-  SightListScreen({Key? key}) : super(key: key);
+  const SightListScreen({Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() {
@@ -18,10 +18,10 @@ class _SightListScreenState extends State<SightListScreen> {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         appBar: PreferredSize(
-            preferredSize: Size.fromHeight(112.0),
+            preferredSize: const Size.fromHeight(112.0),
             child: Container(
               color: Colors.white,
-              padding: EdgeInsets.only(
+              padding: const EdgeInsets.only(
                   left: 16.0,
                   right: 16.0,
                   top: 40.0,
@@ -29,13 +29,13 @@ class _SightListScreenState extends State<SightListScreen> {
               child: RichText(
                 maxLines: 2,
                 textAlign: TextAlign.left,
-                text: TextSpan(
+                text: const TextSpan(
                     text: 'C',
                     style: TextStyle(
                         color: Colors.green,
                         fontSize: 32,
                         fontWeight: FontWeight.w700),
-                    children: [
+                    children: <InlineSpan>[
                       TextSpan(
                           text: 'писок\n',
                           style: TextStyle(color: Colors.black),
@@ -53,15 +53,12 @@ class _SightListScreenState extends State<SightListScreen> {
               ),
             )
         ),
-        body: Container(
-          // TODO move this to ListView after lesson with Lists
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                SightCard(mocks[0]),
-                SightCard(mocks[1])
-              ],
-            ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: <SightCard>[
+              SightCard(mocks[0]),
+              SightCard(mocks[1])
+            ],
           ),
         ),
        );
