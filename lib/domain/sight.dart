@@ -5,7 +5,11 @@ class Sight {
     required this.lon,
     this.url,
     this.details,
-    this.type
+    this.type,
+    this.workTime,
+    // todo implement class for date visit and date visited
+    this.dateToVisit,
+    this.dateVisit,
   });
 
   String name;
@@ -14,4 +18,7 @@ class Sight {
   String? url;
   String? details;
   String? type;
+  String? workTime;
+  String? dateVisit;
+  String? dateToVisit;
 }
