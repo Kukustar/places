@@ -57,8 +57,7 @@ class _SightListScreenState extends State<SightListScreen> {
         child: Column(
           children: <Widget>[
             InterestingPlaceCard(sight: mocks[0]),
-            FavoritesPlaceCard(sight: mocks[2]),
-            WantToVisitPlace(sight: mocks[3])
+            InterestingPlaceCard(sight: mocks[1]),
           ],
         ),
       ),

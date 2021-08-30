@@ -1,3 +1,5 @@
+import 'package:places/domain/time_of_visit.dart';
+
 class Sight {
   Sight({
     required this.name,
@@ -7,9 +9,8 @@ class Sight {
     this.details,
     this.type,
     this.workTime,
-    // todo implement class for date visit and date visited
-    this.dateToVisit,
-    this.dateVisit,
+
+    required this.timeOfVisit,
   });
 
   String name;
@@ -21,4 +22,6 @@ class Sight {
   String? workTime;
   String? dateVisit;
   String? dateToVisit;
+
+  TimeOfVisit timeOfVisit;
 }

@@ -1,6 +1,6 @@
 class TimeOfVisit {
   TimeOfVisit({
-    required this.wantToVisit,
+    this.wantToVisit = '',
     this.alreadyVisit = ''
   });
 

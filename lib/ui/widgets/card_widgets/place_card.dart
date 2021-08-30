@@ -115,13 +115,15 @@ class Card extends StatelessWidget implements SightCard {
   }
 }
 
+/// Simple card for interested places
 class InterestingPlaceCard extends Card {
   const InterestingPlaceCard({Key? key, required Sight sight})
       : super(key: key, sight: sight);
 }
 
-class FavoritesPlaceCard extends Card {
-  const FavoritesPlaceCard({Key? key, required Sight sight})
+/// Extended card for already visit place screen
+class WantToVisitPlaceCard extends Card {
+  const WantToVisitPlaceCard({Key? key, required Sight sight})
       : super(key: key, sight: sight);
 
   @override
@@ -159,12 +161,13 @@ class FavoritesPlaceCard extends Card {
 
   @override
   String getCardText() {
-    return sight.dateToVisit.toString();
+    return sight.timeOfVisit.wantToVisit.toString();
   }
 }
 
-class WantToVisitPlace extends Card {
-  const WantToVisitPlace({
+
+class AlreadyVisitPlaceCard extends Card {
+  const AlreadyVisitPlaceCard({
     Key? key,
     required Sight sight,
   }) : super(key: key, sight: sight);
@@ -182,7 +185,7 @@ class WantToVisitPlace extends Card {
 
   @override
   String getCardText() {
-    return sight.dateVisit.toString();
+    return sight.timeOfVisit.alreadyVisit.toString();
   }
 
   @override
