@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:places/mocks.dart';
 import 'package:places/ui/widgets/card_widgets/place_card.dart';
+import 'package:places/ui/widgets/navigation_bar.dart';
 
 /// SightListScreen
 class SightListScreen extends StatefulWidget {
@@ -61,6 +62,7 @@ class _SightListScreenState extends State<SightListScreen> {
           ],
         ),
       ),
+      bottomNavigationBar: const NavigationBar(currentIndex: 0),
     );
   }
 }

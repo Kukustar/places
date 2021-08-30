@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:places/ui/widgets/card_widgets/place_card.dart';
 
 import 'package:places/mocks.dart';
+import 'package:places/ui/widgets/navigation_bar.dart';
 
 class VisitingScreen extends StatefulWidget {
   const VisitingScreen({ Key? key }) : super(key: key);
@@ -73,6 +74,7 @@ class _VisitingScreenState extends State<VisitingScreen>  {
             ),
           )],
         ),
+        bottomNavigationBar: const NavigationBar(currentIndex: 2),
       ),
     );
   }
