@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ImageLoader extends StatelessWidget {
-  ImageLoader(this.url, {Key? key}) : super(key: key);
+  const ImageLoader(this.url, {Key? key}) : super(key: key);
   final String url;
 
   @override
-  Widget build(context) {
+  Widget build(BuildContext context) {
     return Image.network(
       url.toString(),
       fit: BoxFit.cover,
