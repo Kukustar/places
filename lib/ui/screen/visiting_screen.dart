@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:places/ui/widgets/card_widgets/place_card.dart';
-
 import 'package:places/mocks.dart';
+import 'package:places/ui/widgets/card_widgets/place_card.dart';
 import 'package:places/ui/widgets/navigation_bar.dart';
 
 class VisitingScreen extends StatefulWidget {
@@ -20,7 +19,7 @@ class _VisitingScreenState extends State<VisitingScreen>  {
       initialIndex: 0,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Избранное', style: TextStyle(color: Colors.black),),
+          title: const Text('Избранное'),
           backgroundColor: Colors.transparent,
           centerTitle: true,
           elevation: 0,
@@ -55,10 +54,10 @@ class _VisitingScreenState extends State<VisitingScreen>  {
         ),
         body: TabBarView(
           // controller: tabController,
-          children: [
+          children: <Widget>[
             SingleChildScrollView(
               child: Column(
-                children: [
+                children: <Widget>[
                   WantToVisitPlaceCard(sight: mocks[2]),
                   WantToVisitPlaceCard(sight: mocks[2]),
                   WantToVisitPlaceCard(sight: mocks[2]),
@@ -66,7 +65,7 @@ class _VisitingScreenState extends State<VisitingScreen>  {
             )),
               SingleChildScrollView(
                 child: Column(
-                  children: [
+                  children: <Widget>[
                     AlreadyVisitPlaceCard(sight: mocks[3]),
                     AlreadyVisitPlaceCard(sight: mocks[3]),
                     AlreadyVisitPlaceCard(sight: mocks[3]),

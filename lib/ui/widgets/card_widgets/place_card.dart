@@ -59,7 +59,7 @@ class Card extends StatelessWidget implements SightCard {
         child: ClipRRect(
           borderRadius: BorderRadius.circular(12),
           child: Container(
-            color: Colors.grey.shade100,
+            color: Theme.of(context).cardColor,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
@@ -78,35 +78,36 @@ class Card extends StatelessWidget implements SightCard {
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: SizedBox(
-                    height: 96,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Text(
-                                sight.name,
-                                style: const TextStyle(
-                                    fontSize: 16, fontWeight: FontWeight.w500),
-                                overflow: TextOverflow.ellipsis,
-                                maxLines: 2,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Text(
+                              sight.name,
+                              style: const TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.w500
                               ),
-                              const SizedBox(
-                                height: 2,
-                              ),
-                              RichText(
-                                  maxLines: 3,
-                                  text: TextSpan(
-                                      text: getCardText(),
-                                      style: getCardTextStyle()))
-                            ]),
-                        getFooterCardText(),
-                      ],
-                    ),
+                              overflow: TextOverflow.ellipsis,
+                              maxLines: 2,
+                            ),
+                            const SizedBox(
+                              height: 2,
+                            ),
+                            RichText(
+                                maxLines: 3,
+                                text: TextSpan(
+                                    text: getCardText(),
+                                    style: getCardTextStyle()))
+                          ]),
+                      getFooterCardText(),
+                      SizedBox(height: 16)
+                    ],
+
                   ),
+
                 )
               ],
             ),
@@ -117,8 +118,16 @@ class Card extends StatelessWidget implements SightCard {
 
 /// Simple card for interested places
 class InterestingPlaceCard extends Card {
-  const InterestingPlaceCard({Key? key, required Sight sight})
+  const InterestingPlaceCard({Key? key, required this.sight})
       : super(key: key, sight: sight);
+
+  @override
+  final Sight sight;
+
+  @override
+  String getCardText() {
+    return sight.workTime.toString();
+  }
 }
 
 /// Extended card for already visit place screen

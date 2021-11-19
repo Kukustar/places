@@ -10,23 +10,27 @@ class NavigationBar extends StatelessWidget {
     return BottomNavigationBar(
       showSelectedLabels: false,
       showUnselectedLabels: false,
-      selectedItemColor: const Color(0xff3B3E5B),
-      unselectedItemColor: Colors.black,
       currentIndex: currentIndex,
-      items: const [
+      items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          icon: Icon(Icons.list),
+          backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
+          icon: Icon(
+            Icons.list,
+          ),
           label: 'Список',
         ),
         BottomNavigationBarItem(
+          backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
           icon: Icon(Icons.map),
           label: 'Карта',
         ),
         BottomNavigationBarItem(
+          backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
           icon: Icon(Icons.favorite),
           label: 'Избранное',
         ),
         BottomNavigationBarItem(
+          backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
           icon: Icon(Icons.settings),
           label: 'Настройки',
         ),

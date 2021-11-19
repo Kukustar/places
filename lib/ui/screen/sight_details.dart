@@ -20,6 +20,7 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: Theme.of(context).backgroundColor,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -97,33 +98,19 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                             style: const TextStyle(
                               fontWeight: FontWeight.normal,
                               fontSize: 14,
-                              color: Colors.black
                             ),
                           ),
                         ),
                     ),
                     Padding(
                         padding: topPadding24,
-                        child: Container(
+                        child: SizedBox(
                           height: 48,
                           width: double.infinity,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.green,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Image.asset('assets/icons/Union.png'),
-                              const SizedBox(width: 16,),
-                              const Text(
-                                'ПОСТРОИТЬ МАРШРУТ',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white
-                                ),
-                            )],
+                          child: ElevatedButton.icon(
+                              onPressed: () {},
+                              icon: Image.asset('assets/icons/Union.png'),
+                              label: const Text('ПОСТРОИТЬ МАРШРУТ')
                           ),
                         ),
                     ),

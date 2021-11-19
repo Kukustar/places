@@ -62,7 +62,9 @@ class _SightListScreenState extends State<SightListScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: const NavigationBar(currentIndex: 0),
+      bottomNavigationBar: const NavigationBar(
+          currentIndex: 0,
+      ),
     );
   }
 }

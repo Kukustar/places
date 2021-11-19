@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:places/ui/screen/sight_list_screen.dart';
+import 'package:places/mocks.dart';
+import 'package:places/res/themes.dart';
+import 'package:places/ui/screen/sight_details.dart';
 
 void main() {
   runApp(const App());
@@ -12,13 +14,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Changed title',
-      theme: ThemeData(
-        backgroundColor: Colors.white,
-        canvasColor: Colors.white,
-        fontFamily: 'Roboto'
-        // fontFamily:
-      ),
-      home: const SightListScreen(),
+      theme: lightTheme,
+      // home: const VisitingScreen(),
+      home: SightDetailsScreen(mocks[0]),
     );
   }
 }
