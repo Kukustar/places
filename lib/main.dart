@@ -18,8 +18,9 @@ class App extends StatelessWidget {
       title: 'Changed title',
       // theme: lightTheme,
       theme: darkTheme,
-      // home: const VisitingScreen(),
-      home: VisitingScreen(),
+      home: SightListScreen()
+      // home:  SightDetailsScreen(mocks[0]),
+      // home: VisitingScreen(),
     );
   }
 }

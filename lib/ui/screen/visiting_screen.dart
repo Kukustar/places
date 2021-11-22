@@ -40,13 +40,6 @@ class _VisitingScreenState extends State<VisitingScreen>  {
                     color: const Color(0xFF3B3E5B),
                     borderRadius: BorderRadius.circular(40),
                 ),
-                  // unselectedLabelColor: const Color(0xff7c7e928f),
-                  // labelStyle: const TextStyle(
-                  //   color: Colors.white,
-                  //   fontSize: 14.0,
-                  //   height: 1.29,
-                  //   fontWeight: FontWeight.w700,
-                  // ),
                   tabs: const <Tab>[
                     Tab(text: 'Хочу посетить',
                     ),

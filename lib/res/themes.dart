@@ -101,5 +101,11 @@ final ThemeData darkTheme = ThemeData.dark().copyWith(
         fontSize: 24,
         fontWeight: FontWeight.w700,
         color: Colors.white),
+      headline4: TextStyle(
+          fontFamily: 'Roboto',
+          fontSize: 32,
+          color: Colors.white,
+          fontWeight: FontWeight.w700
+      )
   ),
 );
