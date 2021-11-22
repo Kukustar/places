@@ -58,10 +58,7 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                   children: <Widget>[
                     Text(
                       widget.sight.name,
-                      style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).primaryTextTheme.headline6
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 2.0),
@@ -69,21 +66,14 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                         children: <Widget>[
                           Text(
                             widget.sight.type.toString(),
-                            style: const TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold
-                            ),
+                            style: Theme.of(context).primaryTextTheme.subtitle2
                           ),
                           Padding(
                               padding: const EdgeInsets.only(left: 16.0),
                               child: RichText(
                                 text: TextSpan(
                                   text: 'закрыто до 9:00',
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.normal,
-                                      color: customGreyColor
-                                    ),
+                                  style: Theme.of(context).primaryTextTheme.bodyText2
                                 ),
                               ),
                           )
@@ -95,10 +85,7 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                         child: RichText(
                           text: TextSpan(
                             text: widget.sight.details.toString(),
-                            style: const TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 14,
-                            ),
+                            style: Theme.of(context).primaryTextTheme.bodyText1
                           ),
                         ),
                     ),
@@ -141,10 +128,7 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                   child: RichText(
                                     text: TextSpan(
                                       text: 'Запланировать',
-                                      style: TextStyle(
-                                          color: customGreyColor,
-                                          fontWeight: FontWeight.normal
-                                      )
+                                      style: Theme.of(context).primaryTextTheme.bodyText2
                                     ),
                                   )
                               )
@@ -157,18 +141,15 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                 height: 19,
                                 child: Image.asset(
                                     'assets/icons/heart.png',
-                                    color: Colors.black,
+                                    color: Theme.of(context).primaryIconTheme.color
                                 ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(left: 9),
                                   child: RichText(
-                                    text: const TextSpan(
+                                    text: TextSpan(
                                         text: 'В избранное',
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.normal
-                                        )
+                                        style: Theme.of(context).primaryTextTheme.bodyText1
                                     ),
                                   )
                               )
