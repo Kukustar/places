@@ -16,8 +16,8 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Changed title',
-      // theme: lightTheme,
-      theme: darkTheme,
+      theme: lightTheme,
+      darkTheme: darkTheme,
       home: SightListScreen()
       // home:  SightDetailsScreen(mocks[0]),
       // home: VisitingScreen(),

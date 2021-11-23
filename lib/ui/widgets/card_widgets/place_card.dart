@@ -118,11 +118,9 @@ class Card extends StatelessWidget implements SightCard {
 
 /// Simple card for interested places
 class InterestingPlaceCard extends Card {
-  const InterestingPlaceCard({Key? key, required this.sight})
+  const InterestingPlaceCard({Key? key, required Sight sight})
       : super(key: key, sight: sight);
 
-  @override
-  final Sight sight;
 
   @override
   String getCardText() {
