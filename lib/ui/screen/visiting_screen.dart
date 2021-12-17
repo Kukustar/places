@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:places/ui/widgets/card_widgets/place_card.dart';
-
 import 'package:places/mocks.dart';
+import 'package:places/ui/widgets/card_widgets/place_card.dart';
 import 'package:places/ui/widgets/navigation_bar.dart';
 
 class VisitingScreen extends StatefulWidget {
@@ -20,7 +19,10 @@ class _VisitingScreenState extends State<VisitingScreen>  {
       initialIndex: 0,
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('Избранное', style: TextStyle(color: Colors.black),),
+          title: Text(
+            'Избранное',
+            style: Theme.of(context).primaryTextTheme.headline6,
+          ),
           backgroundColor: Colors.transparent,
           centerTitle: true,
           elevation: 0,
@@ -38,16 +40,11 @@ class _VisitingScreenState extends State<VisitingScreen>  {
                     color: const Color(0xFF3B3E5B),
                     borderRadius: BorderRadius.circular(40),
                 ),
-                  unselectedLabelColor: const Color(0xff7c7e928f),
-                  labelStyle: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 14.0,
-                    height: 1.29,
-                    fontWeight: FontWeight.w700,
-                  ),
                   tabs: const <Tab>[
-                    Tab(text: 'Хочу посетить'),
-                    Tab(text: 'Посетил')
+                    Tab(text: 'Хочу посетить',
+                    ),
+                    Tab(text: 'Посетил',
+                    )
                   ]
               ),
             ),
@@ -55,10 +52,10 @@ class _VisitingScreenState extends State<VisitingScreen>  {
         ),
         body: TabBarView(
           // controller: tabController,
-          children: [
+          children: <Widget>[
             SingleChildScrollView(
               child: Column(
-                children: [
+                children: <Widget>[
                   WantToVisitPlaceCard(sight: mocks[2]),
                   WantToVisitPlaceCard(sight: mocks[2]),
                   WantToVisitPlaceCard(sight: mocks[2]),
@@ -66,7 +63,7 @@ class _VisitingScreenState extends State<VisitingScreen>  {
             )),
               SingleChildScrollView(
                 child: Column(
-                  children: [
+                  children: <Widget>[
                     AlreadyVisitPlaceCard(sight: mocks[3]),
                     AlreadyVisitPlaceCard(sight: mocks[3]),
                     AlreadyVisitPlaceCard(sight: mocks[3]),

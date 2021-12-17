@@ -20,6 +20,7 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // backgroundColor: Theme.of(context).backgroundColor,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -57,10 +58,7 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                   children: <Widget>[
                     Text(
                       widget.sight.name,
-                      style: const TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: Theme.of(context).primaryTextTheme.headline6
                     ),
                     Padding(
                       padding: const EdgeInsets.only(top: 2.0),
@@ -68,21 +66,14 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                         children: <Widget>[
                           Text(
                             widget.sight.type.toString(),
-                            style: const TextStyle(
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold
-                            ),
+                            style: Theme.of(context).primaryTextTheme.subtitle2
                           ),
                           Padding(
                               padding: const EdgeInsets.only(left: 16.0),
                               child: RichText(
                                 text: TextSpan(
                                   text: 'закрыто до 9:00',
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.normal,
-                                      color: customGreyColor
-                                    ),
+                                  style: Theme.of(context).primaryTextTheme.bodyText2
                                 ),
                               ),
                           )
@@ -94,36 +85,19 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                         child: RichText(
                           text: TextSpan(
                             text: widget.sight.details.toString(),
-                            style: const TextStyle(
-                              fontWeight: FontWeight.normal,
-                              fontSize: 14,
-                              color: Colors.black
-                            ),
+                            style: Theme.of(context).primaryTextTheme.bodyText1
                           ),
                         ),
                     ),
                     Padding(
                         padding: topPadding24,
-                        child: Container(
+                        child: SizedBox(
                           height: 48,
                           width: double.infinity,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.green,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Image.asset('assets/icons/Union.png'),
-                              const SizedBox(width: 16,),
-                              const Text(
-                                'ПОСТРОИТЬ МАРШРУТ',
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white
-                                ),
-                            )],
+                          child: ElevatedButton.icon(
+                              onPressed: () {},
+                              icon: Image.asset('assets/icons/Union.png'),
+                              label: const Text('ПОСТРОИТЬ МАРШРУТ')
                           ),
                         ),
                     ),
@@ -154,10 +128,7 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                   child: RichText(
                                     text: TextSpan(
                                       text: 'Запланировать',
-                                      style: TextStyle(
-                                          color: customGreyColor,
-                                          fontWeight: FontWeight.normal
-                                      )
+                                      style: Theme.of(context).primaryTextTheme.bodyText2
                                     ),
                                   )
                               )
@@ -170,18 +141,15 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                                 height: 19,
                                 child: Image.asset(
                                     'assets/icons/heart.png',
-                                    color: Colors.black,
+                                    color: Theme.of(context).primaryIconTheme.color
                                 ),
                               ),
                               Padding(
                                 padding: const EdgeInsets.only(left: 9),
                                   child: RichText(
-                                    text: const TextSpan(
+                                    text: TextSpan(
                                         text: 'В избранное',
-                                        style: TextStyle(
-                                            color: Colors.black,
-                                            fontWeight: FontWeight.normal
-                                        )
+                                        style: Theme.of(context).primaryTextTheme.bodyText1
                                     ),
                                   )
                               )

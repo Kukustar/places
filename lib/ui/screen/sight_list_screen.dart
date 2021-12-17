@@ -28,25 +28,22 @@ class _SightListScreenState extends State<SightListScreen> {
               child: RichText(
                   maxLines: 2,
                   textAlign: TextAlign.left,
-                  text: const TextSpan(
+                  text: TextSpan(
                       text: 'C',
-                      style: TextStyle(
-                          color: Colors.green,
-                          fontSize: 32,
-                          fontWeight: FontWeight.w700
-                      ),
+                      style: Theme.of(context).primaryTextTheme.headline4!.copyWith(color: Colors.green),
                       children: <InlineSpan>[
                         TextSpan(
                           text: 'писок\n',
-                          style: TextStyle(color: Colors.black),
+                          style: Theme.of(context).primaryTextTheme.headline4,
                         ),
                         TextSpan(
                           text: 'и',
-                          style: TextStyle(color: Colors.yellow),
+                          style: Theme.of(context).primaryTextTheme.headline4!.copyWith(color: Colors.yellow),
                         ),
                         TextSpan(
                             text: 'нтересных мест',
-                            style: TextStyle(color: Colors.black))
+                            style: Theme.of(context).primaryTextTheme.headline4
+                        )
                       ])),
             ),
           ),
@@ -62,7 +59,9 @@ class _SightListScreenState extends State<SightListScreen> {
           ],
         ),
       ),
-      bottomNavigationBar: const NavigationBar(currentIndex: 0),
+      bottomNavigationBar: const NavigationBar(
+          currentIndex: 0,
+      ),
     );
   }
 }
