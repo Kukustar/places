@@ -95,7 +95,9 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                           height: 48,
                           width: double.infinity,
                           child: ElevatedButton.icon(
-                              onPressed: () {},
+                              onPressed: () {
+                                print('button was clicked');
+                              },
                               icon: Image.asset('assets/icons/Union.png'),
                               label: const Text('ПОСТРОИТЬ МАРШРУТ')
                           ),
@@ -113,47 +115,57 @@ class _SightDetailsScreenState extends State<SightDetailsScreen> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
-                          Row(
-                            children: <Widget>[
-                              SizedBox(
-                                width: 22,
-                                height: 19,
-                                child: Image.asset(
-                                  'assets/icons/Calendar.png',
-                                  color: customGreyColor,
+                          InkWell(
+                            onTap: (){
+                              print('tap on planing button');
+                            },
+                            child: Row(
+                              children: <Widget>[
+                                SizedBox(
+                                  width: 22,
+                                  height: 19,
+                                  child: Image.asset(
+                                    'assets/icons/Calendar.png',
+                                    color: customGreyColor,
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 9),
-                                  child: RichText(
-                                    text: TextSpan(
-                                      text: 'Запланировать',
-                                      style: Theme.of(context).primaryTextTheme.bodyText2
-                                    ),
-                                  )
-                              )
-                            ],
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 9),
+                                    child: RichText(
+                                      text: TextSpan(
+                                        text: 'Запланировать',
+                                        style: Theme.of(context).primaryTextTheme.bodyText2
+                                      ),
+                                    )
+                                )
+                              ],
+                            ),
                           ),
-                          Row(
-                            children: <Widget>[
-                              SizedBox(
-                                width: 22,
-                                height: 19,
-                                child: Image.asset(
-                                    'assets/icons/heart.png',
-                                    color: Theme.of(context).primaryIconTheme.color
+                          InkWell(
+                            onTap: (){
+                              print('tap on to favourites button');
+                            },
+                            child: Row(
+                              children: <Widget>[
+                                SizedBox(
+                                  width: 22,
+                                  height: 19,
+                                  child: Image.asset(
+                                      'assets/icons/heart.png',
+                                      color: Theme.of(context).primaryIconTheme.color
+                                  ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(left: 9),
-                                  child: RichText(
-                                    text: TextSpan(
-                                        text: 'В избранное',
-                                        style: Theme.of(context).primaryTextTheme.bodyText1
-                                    ),
-                                  )
-                              )
-                            ],
+                                Padding(
+                                  padding: const EdgeInsets.only(left: 9),
+                                    child: RichText(
+                                      text: TextSpan(
+                                          text: 'В избранное',
+                                          style: Theme.of(context).primaryTextTheme.bodyText1
+                                      ),
+                                    )
+                                )
+                              ],
+                            ),
                           )
                         ],
                       ),

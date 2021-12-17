@@ -103,7 +103,7 @@ class Card extends StatelessWidget implements SightCard {
                                     style: getCardTextStyle()))
                           ]),
                       getFooterCardText(),
-                      SizedBox(height: 16)
+                      const SizedBox(height: 16)
                     ],
 
                   ),

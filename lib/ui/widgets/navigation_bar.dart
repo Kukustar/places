@@ -14,24 +14,24 @@ class NavigationBar extends StatelessWidget {
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
-          icon: Icon(
+          icon: const Icon(
             Icons.list,
           ),
           label: 'Список',
         ),
         BottomNavigationBarItem(
           backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
-          icon: Icon(Icons.map),
+          icon: const Icon(Icons.map),
           label: 'Карта',
         ),
         BottomNavigationBarItem(
           backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
-          icon: Icon(Icons.favorite),
+          icon: const Icon(Icons.favorite),
           label: 'Избранное',
         ),
         BottomNavigationBarItem(
           backgroundColor: Theme.of(context).bottomNavigationBarTheme.backgroundColor,
-          icon: Icon(Icons.settings),
+          icon: const Icon(Icons.settings),
           label: 'Настройки',
         ),
       ],
