@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 const Color buttonPrimaryColor = Color(0xFF4CAF50);
 
 final ThemeData lightTheme = ThemeData.light().copyWith(
+  appBarTheme: AppBarTheme(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+  ),
   scaffoldBackgroundColor: Colors.white,
   cardColor: const Color(0xFFF5F5F5),
   primaryIconTheme: const IconThemeData(
@@ -42,6 +46,12 @@ final ThemeData lightTheme = ThemeData.light().copyWith(
         fontSize: 14,
         color: Color(0xFF7C7E92),
         fontWeight: FontWeight.w400),
+    subtitle1: TextStyle(
+        fontFamily: 'Roboto',
+        fontSize: 16,
+        color: Color(0xFF252849),
+        fontWeight: FontWeight.normal
+    ),
     subtitle2: TextStyle(
         fontFamily: 'Roboto',
         fontSize: 14,
@@ -51,7 +61,8 @@ final ThemeData lightTheme = ThemeData.light().copyWith(
         fontFamily: 'Roboto',
         fontSize: 24,
         fontWeight: FontWeight.w700,
-        color: Color(0xFF3B3E5B)),
+        color: Color(0xFF3B3E5B)
+    ),
       headline4: TextStyle(
         fontFamily: 'Roboto',
         fontSize: 32,
