@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:places/providers/settings.dart';
+import 'package:places/ui/widgets/navigation_bar.dart';
 import 'package:provider/provider.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -57,7 +58,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(vertical: 18),
+                padding: EdgeInsets.symmetric(vertical: 5),
                 decoration: BoxDecoration(
                   border: Border(
                     bottom: BorderSide(
@@ -67,14 +68,32 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   )
                 ),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Смотреть туториал')
+                    Text('Смотреть туториал'),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: IconButton(
+                        padding: EdgeInsets.all(0.0),
+                        icon: Icon(
+                          Icons.info_outlined,
+                          size: 20,
+                          color: Color(0xff4CAF50),
+                        ),
+                        onPressed: () {
+                          print('watch tutorial tapped');
+                        },
+                      ),
+                    ),
                   ],
                 ),
               ),
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: const NavigationBar(
+        currentIndex: 3,
       ),
     );
   }
