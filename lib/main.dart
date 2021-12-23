@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:places/mocks.dart';
+import 'package:places/providers/settings.dart';
 import 'package:places/res/themes.dart';
-import 'package:places/ui/screen/sight_details.dart';
 import 'package:places/ui/screen/sight_list_screen.dart';
-import 'package:places/ui/screen/visiting_screen.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(const App());
@@ -14,13 +13,21 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Changed title',
-      theme: lightTheme,
-      darkTheme: darkTheme,
-      home: SightListScreen()
-      // home:  SightDetailsScreen(mocks[0]),
-      // home: VisitingScreen(),
+    return MultiProvider(
+        providers: [
+          ChangeNotifierProvider(
+              create: (context) => SettingsModel()
+          )
+        ],
+        child: Consumer<SettingsModel>(
+            builder: (_, settings, child) {
+              return MaterialApp(
+                theme: lightTheme,
+                darkTheme: darkTheme,
+                themeMode: settings.appTheme,
+                home: SightListScreen()
+              );
+            })
     );
   }
 }

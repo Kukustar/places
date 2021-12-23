@@ -3,6 +3,10 @@ import 'package:flutter/material.dart';
 const Color buttonPrimaryColor = Color(0xFF4CAF50);
 
 final ThemeData lightTheme = ThemeData.light().copyWith(
+  appBarTheme: AppBarTheme(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+  ),
   scaffoldBackgroundColor: Colors.white,
   cardColor: const Color(0xFFF5F5F5),
   primaryIconTheme: const IconThemeData(
@@ -16,9 +20,12 @@ final ThemeData lightTheme = ThemeData.light().copyWith(
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
+        shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0))
+        ),
         backgroundColor: MaterialStateProperty.all(buttonPrimaryColor)),
   ),
-  tabBarTheme: TabBarTheme(
+  tabBarTheme: const TabBarTheme(
     labelColor: Colors.white,
     unselectedLabelColor: Color(0xFF7C7E92),
     unselectedLabelStyle: TextStyle(
@@ -39,6 +46,12 @@ final ThemeData lightTheme = ThemeData.light().copyWith(
         fontSize: 14,
         color: Color(0xFF7C7E92),
         fontWeight: FontWeight.w400),
+    subtitle1: TextStyle(
+        fontFamily: 'Roboto',
+        fontSize: 16,
+        color: Color(0xFF252849),
+        fontWeight: FontWeight.normal
+    ),
     subtitle2: TextStyle(
         fontFamily: 'Roboto',
         fontSize: 14,
@@ -48,7 +61,8 @@ final ThemeData lightTheme = ThemeData.light().copyWith(
         fontFamily: 'Roboto',
         fontSize: 24,
         fontWeight: FontWeight.w700,
-        color: Color(0xFF3B3E5B)),
+        color: Color(0xFF3B3E5B)
+    ),
       headline4: TextStyle(
         fontFamily: 'Roboto',
         fontSize: 32,
@@ -65,7 +79,7 @@ final ThemeData darkTheme = ThemeData.dark().copyWith(
     backgroundColor: Color(0xFF21222c),
     selectedIconTheme: IconThemeData(color: Colors.white),
   ),
-  tabBarTheme: TabBarTheme(
+  tabBarTheme: const TabBarTheme(
       labelColor: Colors.white,
       unselectedLabelColor: Color(0xFF7C7E92),
       unselectedLabelStyle: TextStyle(
@@ -78,19 +92,22 @@ final ThemeData darkTheme = ThemeData.dark().copyWith(
   cardColor: const Color.fromRGBO(26, 26, 32, 1.0),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(buttonPrimaryColor)),
+        backgroundColor: MaterialStateProperty.all(buttonPrimaryColor)
+    ),
   ),
   primaryTextTheme: const TextTheme(
     bodyText1: TextStyle(
         fontFamily: 'Roboto',
         fontSize: 14,
         color: Colors.white,
-        fontWeight: FontWeight.w400),
+        fontWeight: FontWeight.w400
+    ),
     bodyText2: TextStyle(
         fontFamily: 'Roboto',
         fontSize: 14,
         color: Color.fromRGBO(124, 126, 146, 0.56),
-        fontWeight: FontWeight.w400),
+        fontWeight: FontWeight.w400
+    ),
     subtitle2: TextStyle(
         fontFamily: 'Roboto',
         fontSize: 14,
@@ -100,7 +117,8 @@ final ThemeData darkTheme = ThemeData.dark().copyWith(
         fontFamily: 'Roboto',
         fontSize: 24,
         fontWeight: FontWeight.w700,
-        color: Colors.white),
+        color: Colors.white
+    ),
       headline4: TextStyle(
           fontFamily: 'Roboto',
           fontSize: 32,
