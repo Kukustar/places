@@ -36,11 +36,18 @@ final ThemeData lightTheme = ThemeData.light().copyWith(
     )
   ),
   primaryTextTheme: const TextTheme(
+    caption: TextStyle(
+        fontFamily: 'Roboto',
+        fontSize: 12,
+        color: Color(0xFF3B3E5B),
+        fontWeight: FontWeight.w400
+    ),
     bodyText1: TextStyle(
         fontFamily: 'Roboto',
         fontSize: 14,
         color: Color(0xFF3B3E5B),
-        fontWeight: FontWeight.w400),
+        fontWeight: FontWeight.w400
+    ),
     bodyText2: TextStyle(
         fontFamily: 'Roboto',
         fontSize: 14,

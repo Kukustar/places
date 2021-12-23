@@ -14,8 +14,8 @@ class Sight {
   });
 
   String name;
-  String lat;
-  String lon;
+  double lat;
+  double lon;
   String? url;
   String? details;
   String? type;

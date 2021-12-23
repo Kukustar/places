@@ -58,58 +58,63 @@ class Card extends StatelessWidget implements SightCard {
         margin: const EdgeInsets.symmetric(horizontal: 18, vertical: 9),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(12),
-          child: Container(
+          child: Material(
             color: Theme.of(context).cardColor,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Stack(
-                  children: <Widget>[
-                    SizedBox(
-                      child: ImageLoader(sight.url.toString()),
-                      width: double.infinity,
-                      height: 96,
-                    ),
-                    getCardHeader()
-                  ],
-                ),
-                const SizedBox(
-                  height: 16,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            child: InkWell(
+              onTap: () {
+                print('card was tapped');
+              },
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Stack(
                     children: <Widget>[
-                      Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Text(
-                              sight.name,
-                              style: const TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w500
-                              ),
-                              overflow: TextOverflow.ellipsis,
-                              maxLines: 2,
-                            ),
-                            const SizedBox(
-                              height: 2,
-                            ),
-                            RichText(
-                                maxLines: 3,
-                                text: TextSpan(
-                                    text: getCardText(),
-                                    style: getCardTextStyle()))
-                          ]),
-                      getFooterCardText(),
-                      const SizedBox(height: 16)
+                      SizedBox(
+                        child: ImageLoader(sight.url.toString()),
+                        width: double.infinity,
+                        height: 96,
+                      ),
+                      getCardHeader()
                     ],
-
                   ),
-
-                )
-              ],
+                  const SizedBox(
+                    height: 16,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                sight.name,
+                                style: const TextStyle(
+                                    fontSize: 16, fontWeight: FontWeight.w500
+                                ),
+                                overflow: TextOverflow.ellipsis,
+                                maxLines: 2,
+                              ),
+                              const SizedBox(
+                                height: 2,
+                              ),
+                              RichText(
+                                  maxLines: 3,
+                                  text: TextSpan(
+                                      text: getCardText(),
+                                      style: getCardTextStyle()
+                                  )
+                              )
+                            ]),
+                        getFooterCardText(),
+                        const SizedBox(height: 16)
+                      ],
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ));

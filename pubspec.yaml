@@ -34,7 +34,17 @@ flutter:
         - asset: fonts/Roboto-Regular.ttf
           weight: 400
 
-
-
   assets:
-    - assets/icons/
+    - assets/icons/hotel.svg
+    - assets/icons/cafe.svg
+    - assets/icons/star.svg
+    - assets/icons/tree.svg
+    - assets/icons/restaurant.svg
+    - assets/icons/musem.svg
+    - assets/icons/Calendar.png
+    - assets/icons/calendar_white.png
+    - assets/icons/heart.png
+    - assets/icons/Share.png
+    - assets/icons/Union.png
+    - assets/icons/Vector.png
+    - assets/icons/cross.png
