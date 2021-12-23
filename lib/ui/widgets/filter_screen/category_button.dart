@@ -23,18 +23,23 @@ class CategoryButton extends StatelessWidget {
           children: [
             Stack(
               children: <Widget>[
-                InkWell(
-                  onTap: onButtonTap,
-                  customBorder: const CircleBorder(),
-                  child: Container(
-                    width: 100,
-                    decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Color(0xffE2F2E3),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: SvgPicture.asset(svgAsset),
+                Container(
+                  width: 100,
+                  decoration: const BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Color(0xffE2F2E3),
+                  ),
+                  child: Material(
+                    color: Colors.transparent,
+                    child: InkWell(
+                      onTap: onButtonTap,
+                      customBorder: const CircleBorder(),
+                      child: Container(
+                        child: Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: SvgPicture.asset(svgAsset),
+                        ),
+                      ),
                     ),
                   ),
                 ),

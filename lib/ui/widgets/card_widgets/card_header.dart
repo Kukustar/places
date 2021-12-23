@@ -27,13 +27,13 @@ class CardHeader extends StatelessWidget {
                 children: <Widget>[
                   for (String icon in iconsList) Padding(
                     padding: const EdgeInsets.only(right: 16.0),
-                    child: InkWell(
-                      onTap: () {
-                        print('$icon was tapped');
-                      },
-                      child: Image.asset(
-                          icon,
-                          color: Colors.white
+                    child: Material(
+                        color: Colors.transparent,
+                        child: InkWell(
+                          onTap: () {
+                            print('$icon was tapped');
+                          },
+                          child: Image.asset(icon),
                       ),
                     ),
                   )
